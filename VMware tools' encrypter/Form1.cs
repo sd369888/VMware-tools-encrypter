@@ -158,7 +158,16 @@ namespace VMware_tools__encrypter
             }
             progressBar1.Style = ProgressBarStyle.Continuous;
             progressBar1.Value = 0;
-            textBox2.Text=System.Text.Encoding.Default.GetString(  TextEncrypt(textBox1.Text, ribbonTextBox2.TextBoxText));
+            try
+            {
+ textBox2.Text=System.Text.Encoding.Default.GetString(  TextEncrypt(textBox1.Text, ribbonTextBox2.TextBoxText));
+            }
+            catch (Exception ex)
+            {
+
+                textBox2.Text = Convert.ToString(ex);
+            }
+           
         }
 
         private void ribbonButton9_Click(object sender, EventArgs e)
