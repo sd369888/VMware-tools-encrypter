@@ -177,6 +177,21 @@ namespace VMware_tools__encrypter
             textBox2.Text = TextDecrypt( byteArray,ribbonTextBox2.TextBoxText);
         }
 
+        private void ribbon1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonOrbRecentItem1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://space.bilibili.com/398679679");
+        }
+
+        private void ribbonOrbMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         public static void edc()
         {
             destr = CryptClass.DecryptDES(str, pasw);
