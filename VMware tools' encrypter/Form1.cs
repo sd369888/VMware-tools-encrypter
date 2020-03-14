@@ -53,44 +53,26 @@ namespace VMware_tools__encrypter
         #endregion AES加密
 
         #region AES解密
-
-        public static string AesDecrypt(string str, string key)
-        {
-            byte[] toEncryptArray, resultArray= { };
-            if (key.Length!=32)
+ 
+    public static string TextDecrypt(byte[] data, string secretKey)
+    {
+            if (secretKey.Length!=32)
             {
                 MessageBox.Show("请输入32位密钥");
                 return null;
             }
-            if (string.IsNullOrEmpty(str)) return null;
-            try
-            {
-toEncryptArray = Convert.FromBase64String(str);
-                RijndaelManaged rm = new RijndaelManaged
-                {
-                    Key = Encoding.UTF8.GetBytes(key),
-                    Mode = CipherMode.ECB,
-                    Padding = PaddingMode.PKCS7
-                };
+        byte[] key = Encoding.UTF8.GetBytes(secretKey);
 
-                ICryptoTransform cTransform = rm.CreateDecryptor();
-                resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
-      
-            }
-            catch (Exception ex)
-            {
-                return null;
-                MessageBox.Show(Convert.ToString( ex), "提示");
-            }
-             return Encoding.UTF8.GetString(resultArray);
-
-           
-
-     
+        for (int i = 0; i < data.Length; i++)
+        {
+            data[i] ^= key[i % key.Length];
         }
 
-        #endregion AES解密
-        private void ribbonButton3_Click(object sender, EventArgs e)
+        return Encoding.UTF8.GetString(data, 0, data.Length);
+    }
+
+    #endregion AES解密
+    private void ribbonButton3_Click(object sender, EventArgs e)
         {
             str = textBox1.Text;
             pasw = ribbonTextBox1.TextBoxText;
@@ -192,7 +174,7 @@ toEncryptArray = Convert.FromBase64String(str);
             progressBar1.Value = 0;
             byte[] byteArray = System.Text.Encoding.Default.GetBytes(textBox1.Text);
             byte[] fuckbyte = System.Text.Encoding.Default.GetBytes(ribbonTextBox2.TextBoxText);
-            textBox2.Text = AesDecrypt( textBox1.Text,ribbonTextBox2.TextBoxText);
+            textBox2.Text = TextDecrypt( byteArray,ribbonTextBox2.TextBoxText);
         }
 
         public static void edc()
