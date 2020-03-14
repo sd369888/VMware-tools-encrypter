@@ -38,6 +38,8 @@
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTextBox2 = new System.Windows.Forms.RibbonTextBox();
+            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
@@ -52,8 +54,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -143,6 +143,20 @@
             // 
             this.ribbonTextBox2.Text = "密钥";
             this.ribbonTextBox2.TextBoxText = "";
+            // 
+            // ribbonButton8
+            // 
+            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
+            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
+            this.ribbonButton8.Text = "开始加密";
+            this.ribbonButton8.Click += new System.EventHandler(this.ribbonButton8_Click);
+            // 
+            // ribbonButton9
+            // 
+            this.ribbonButton9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.Image")));
+            this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
+            this.ribbonButton9.Text = "开始解密";
+            this.ribbonButton9.Click += new System.EventHandler(this.ribbonButton9_Click);
             // 
             // ribbonTab2
             // 
@@ -276,19 +290,6 @@
             this.progressBar1.Size = new System.Drawing.Size(1184, 52);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
-            // 
-            // ribbonButton8
-            // 
-            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
-            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
-            this.ribbonButton8.Text = "开始加密";
-            this.ribbonButton8.Click += new System.EventHandler(this.ribbonButton8_Click);
-            // 
-            // ribbonButton9
-            // 
-            this.ribbonButton9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.Image")));
-            this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
-            this.ribbonButton9.Text = "开始解密";
             // 
             // Form1
             // 

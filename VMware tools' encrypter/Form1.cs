@@ -34,6 +34,11 @@ namespace VMware_tools__encrypter
 
         public static byte[] TextEncrypt(string content, string secretKey)
         {
+            if (secretKey.Length != 32)
+            {
+                MessageBox.Show("请输入32位密钥");
+                return null;
+            }
             byte[] data = Encoding.UTF8.GetBytes(content);
             byte[] key = Encoding.UTF8.GetBytes(secretKey);
 
@@ -49,16 +54,39 @@ namespace VMware_tools__encrypter
 
         #region AES解密
 
-        public static string TextDecrypt(byte[] data, string secretKey)
+        public static string AesDecrypt(string str, string key)
         {
-            byte[] key = Encoding.UTF8.GetBytes(secretKey);
-
-            for (int i = 0; i < data.Length; i++)
+            byte[] toEncryptArray, resultArray= { };
+            if (key.Length!=32)
             {
-                data[i] ^= key[i % key.Length];
+                MessageBox.Show("请输入32位密钥");
+                return null;
             }
+            if (string.IsNullOrEmpty(str)) return null;
+            try
+            {
+toEncryptArray = Convert.FromBase64String(str);
+                RijndaelManaged rm = new RijndaelManaged
+                {
+                    Key = Encoding.UTF8.GetBytes(key),
+                    Mode = CipherMode.ECB,
+                    Padding = PaddingMode.PKCS7
+                };
 
-            return Encoding.UTF8.GetString(data, 0, data.Length);
+                ICryptoTransform cTransform = rm.CreateDecryptor();
+                resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+      
+            }
+            catch (Exception ex)
+            {
+                return null;
+                MessageBox.Show(Convert.ToString( ex), "提示");
+            }
+             return Encoding.UTF8.GetString(resultArray);
+
+           
+
+     
         }
 
         #endregion AES解密
@@ -91,7 +119,7 @@ namespace VMware_tools__encrypter
             else
             {
                 i++;
-                if (i > 8)
+                if (i > 16)
                 {
                     e.Handled = true;//不处理
                 }
@@ -146,8 +174,25 @@ namespace VMware_tools__encrypter
                 progressBar1.Value = i;
                 Thread.Sleep(5);
             }
+            progressBar1.Style = ProgressBarStyle.Continuous;
             progressBar1.Value = 0;
             textBox2.Text=System.Text.Encoding.Default.GetString(  TextEncrypt(textBox1.Text, ribbonTextBox2.TextBoxText));
+        }
+
+        private void ribbonButton9_Click(object sender, EventArgs e)
+        {
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            progressBar1.Value = 0;
+            for (int i = 0; i < 101; i++)
+            {
+                progressBar1.Value = i;
+                Thread.Sleep(5);
+            }
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            progressBar1.Value = 0;
+            byte[] byteArray = System.Text.Encoding.Default.GetBytes(textBox1.Text);
+            byte[] fuckbyte = System.Text.Encoding.Default.GetBytes(ribbonTextBox2.TextBoxText);
+            textBox2.Text = AesDecrypt( textBox1.Text,ribbonTextBox2.TextBoxText);
         }
 
         public static void edc()
