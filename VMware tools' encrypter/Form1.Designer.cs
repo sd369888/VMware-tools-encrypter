@@ -56,6 +56,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.ribbonOrbRecentItem2 = new System.Windows.Forms.RibbonOrbRecentItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -79,6 +80,7 @@
             this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem1);
             this.ribbon1.OrbDropDown.Name = "";
             this.ribbon1.OrbDropDown.RecentItems.Add(this.ribbonOrbRecentItem1);
+            this.ribbon1.OrbDropDown.RecentItems.Add(this.ribbonOrbRecentItem2);
             this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 116);
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.OrbImage = null;
@@ -311,6 +313,12 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
             // 
+            // ribbonOrbRecentItem2
+            // 
+            this.ribbonOrbRecentItem2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.Image")));
+            this.ribbonOrbRecentItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.SmallImage")));
+            this.ribbonOrbRecentItem2.Text = "Copyright © 2020 Vmware_tools @ BiliBili";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -318,8 +326,9 @@
             this.ClientSize = new System.Drawing.Size(1184, 593);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbon1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "VMT文字加解密";
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -360,6 +369,7 @@
         private System.Windows.Forms.RibbonButton ribbonButton9;
         private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem1;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem1;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem2;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("VMware tools' encrypter")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Vmware_tools制作的文本加密解密软件")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TSD Inc.")]
 [assembly: AssemblyProduct("VMware tools' encrypter")]
