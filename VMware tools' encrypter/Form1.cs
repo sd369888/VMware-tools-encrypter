@@ -30,7 +30,38 @@ namespace VMware_tools__encrypter
         }
    
         public delegate void ProgressHandler(object sender, ProgressEventArgs e);
+        #region AES加密
 
+        public static byte[] TextEncrypt(string content, string secretKey)
+        {
+            byte[] data = Encoding.UTF8.GetBytes(content);
+            byte[] key = Encoding.UTF8.GetBytes(secretKey);
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] ^= key[i % key.Length];
+            }
+
+            return data;
+        }
+
+        #endregion AES加密
+
+        #region AES解密
+
+        public static string TextDecrypt(byte[] data, string secretKey)
+        {
+            byte[] key = Encoding.UTF8.GetBytes(secretKey);
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] ^= key[i % key.Length];
+            }
+
+            return Encoding.UTF8.GetString(data, 0, data.Length);
+        }
+
+        #endregion AES解密
         private void ribbonButton3_Click(object sender, EventArgs e)
         {
             str = textBox1.Text;
@@ -104,6 +135,19 @@ namespace VMware_tools__encrypter
         private void ribbonButton7_Click(object sender, EventArgs e)
         {
             textBox1.Text = null;
+        }
+
+        private void ribbonButton8_Click(object sender, EventArgs e)
+        {
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            progressBar1.Value = 0;
+            for (int i = 0; i < 101; i++)
+            {
+                progressBar1.Value = i;
+                Thread.Sleep(5);
+            }
+            progressBar1.Value = 0;
+            textBox2.Text=System.Text.Encoding.Default.GetString(  TextEncrypt(textBox1.Text, ribbonTextBox2.TextBoxText));
         }
 
         public static void edc()
