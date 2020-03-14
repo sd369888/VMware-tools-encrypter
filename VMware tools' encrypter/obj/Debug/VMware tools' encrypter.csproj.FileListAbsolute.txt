@@ -9,3 +9,26 @@ D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' 
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.csproj.CopyComplete
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.exe
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.pdb
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\runtimes\win-x86\native\e_sqlite3.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\runtimes\win-x64\native\e_sqlite3.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\runtimes\win-arm\native\e_sqlite3.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Microsoft.AppCenter.Analytics.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Microsoft.AppCenter.Crashes.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Microsoft.AppCenter.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Newtonsoft.Json.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\SQLitePCLRaw.core.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\SQLitePCLRaw.nativelibrary.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Buffers.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Memory.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Numerics.Vectors.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Microsoft.AppCenter.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Microsoft.AppCenter.Analytics.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Microsoft.AppCenter.Crashes.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\Newtonsoft.Json.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Buffers.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Memory.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Numerics.Vectors.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
