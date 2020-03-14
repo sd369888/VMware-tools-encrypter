@@ -1,0 +1,11 @@
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\VMware tools' encrypter.exe.config
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\VMware tools' encrypter.exe
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\VMware tools' encrypter.pdb
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Windows.Forms.Ribbon35.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.csprojAssemblyReference.cache
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware_tools__encrypter.Form1.resources
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware_tools__encrypter.Properties.Resources.resources
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.csproj.GenerateResource.cache
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.csproj.CopyComplete
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.exe
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.pdb
