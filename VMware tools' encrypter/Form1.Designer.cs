@@ -68,16 +68,18 @@
             this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
             this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonCheckBox2 = new System.Windows.Forms.RibbonCheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
             this.ribbonCheckBox3 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonCheckBox4 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonCheckBox5 = new System.Windows.Forms.RibbonCheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -356,6 +358,44 @@
             // 
             this.ribbonCheckBox2.Text = "加密完成后复制密钥";
             // 
+            // ribbonTab4
+            // 
+            this.ribbonTab4.Panels.Add(this.ribbonPanel6);
+            this.ribbonTab4.Panels.Add(this.ribbonPanel7);
+            this.ribbonTab4.Text = "个人信息保护选项";
+            // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.Items.Add(this.ribbonCheckBox3);
+            this.ribbonPanel6.Items.Add(this.ribbonCheckBox4);
+            this.ribbonPanel6.Items.Add(this.ribbonButton15);
+            this.ribbonPanel6.Text = "信息保护操作";
+            // 
+            // ribbonCheckBox3
+            // 
+            this.ribbonCheckBox3.Text = "当任务管理器被启动时锁定屏幕";
+            // 
+            // ribbonCheckBox4
+            // 
+            this.ribbonCheckBox4.Text = "不允许使用任务管理器";
+            // 
+            // ribbonButton15
+            // 
+            this.ribbonButton15.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.Image")));
+            this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
+            this.ribbonButton15.Text = "应用";
+            this.ribbonButton15.Click += new System.EventHandler(this.ribbonButton15_Click);
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Items.Add(this.ribbonCheckBox5);
+            this.ribbonPanel7.Text = "聊天信息保护";
+            // 
+            // ribbonCheckBox5
+            // 
+            this.ribbonCheckBox5.Text = "在按下Alt+Z时关闭QQ";
+            this.ribbonCheckBox5.CheckBoxCheckChanged += new System.EventHandler(this.ribbonCheckBox5_CheckBoxCheckChanged);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -427,33 +467,6 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
             // 
-            // ribbonTab4
-            // 
-            this.ribbonTab4.Panels.Add(this.ribbonPanel6);
-            this.ribbonTab4.Text = "个人信息保护选项";
-            // 
-            // ribbonPanel6
-            // 
-            this.ribbonPanel6.Items.Add(this.ribbonCheckBox3);
-            this.ribbonPanel6.Items.Add(this.ribbonCheckBox4);
-            this.ribbonPanel6.Items.Add(this.ribbonButton15);
-            this.ribbonPanel6.Text = "信息保护操作";
-            // 
-            // ribbonCheckBox3
-            // 
-            this.ribbonCheckBox3.Text = "当任务管理器被启动时锁定屏幕";
-            // 
-            // ribbonCheckBox4
-            // 
-            this.ribbonCheckBox4.Text = "不允许使用任务管理器";
-            // 
-            // ribbonButton15
-            // 
-            this.ribbonButton15.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.Image")));
-            this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
-            this.ribbonButton15.Text = "应用";
-            this.ribbonButton15.Click += new System.EventHandler(this.ribbonButton15_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -464,6 +477,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "VMT文字加解密";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -526,6 +541,8 @@
         private System.Windows.Forms.RibbonCheckBox ribbonCheckBox3;
         private System.Windows.Forms.RibbonCheckBox ribbonCheckBox4;
         private System.Windows.Forms.RibbonButton ribbonButton15;
+        private System.Windows.Forms.RibbonPanel ribbonPanel7;
+        private System.Windows.Forms.RibbonCheckBox ribbonCheckBox5;
     }
 }
 
