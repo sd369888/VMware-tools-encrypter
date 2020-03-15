@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
@@ -47,6 +48,8 @@
             this.ribbonTextBox3 = new System.Windows.Forms.RibbonTextBox();
             this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
@@ -80,8 +83,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -112,7 +114,7 @@
             this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.ribbon1.OrbText = "VMT加解密";
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1250, 200);
+            this.ribbon1.Size = new System.Drawing.Size(1276, 200);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
@@ -120,7 +122,7 @@
             this.ribbon1.Tabs.Add(this.ribbonTab4);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.Text = "ribbon1";
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Black;
             this.ribbon1.Click += new System.EventHandler(this.ribbon1_Click);
             // 
             // ribbonOrbMenuItem1
@@ -242,6 +244,15 @@
             this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
             this.ribbonButton11.Text = "开始解密";
             this.ribbonButton11.Click += new System.EventHandler(this.ribbonButton11_Click);
+            // 
+            // ribbonPanel8
+            // 
+            this.ribbonPanel8.Items.Add(this.ribbonLabel2);
+            this.ribbonPanel8.Text = "注意事项";
+            // 
+            // ribbonLabel2
+            // 
+            this.ribbonLabel2.Text = "1.明文不可以有换行        2.明文不应超过5000字";
             // 
             // ribbonTab2
             // 
@@ -409,7 +420,7 @@
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Location = new System.Drawing.Point(0, 196);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1250, 422);
+            this.panel1.Size = new System.Drawing.Size(1276, 409);
             this.panel1.TabIndex = 1;
             // 
             // splitContainer1
@@ -427,8 +438,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(1247, 372);
-            this.splitContainer1.SplitterDistance = 631;
+            this.splitContainer1.Size = new System.Drawing.Size(1273, 359);
+            this.splitContainer1.SplitterDistance = 644;
             this.splitContainer1.TabIndex = 2;
             // 
             // textBox1
@@ -439,11 +450,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Close;
             this.textBox1.Location = new System.Drawing.Point(0, 4);
-            this.textBox1.MaxLength = 50000;
+            this.textBox1.MaxLength = 10000;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(628, 368);
+            this.textBox1.Size = new System.Drawing.Size(641, 355);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
@@ -458,33 +469,29 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(606, 368);
+            this.textBox2.Size = new System.Drawing.Size(619, 355);
             this.textBox2.TabIndex = 0;
             // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(0, 370);
+            this.progressBar1.Location = new System.Drawing.Point(0, 357);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1247, 52);
+            this.progressBar1.Size = new System.Drawing.Size(1273, 52);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
             // 
-            // ribbonPanel8
+            // notifyIcon1
             // 
-            this.ribbonPanel8.Items.Add(this.ribbonLabel2);
-            this.ribbonPanel8.Text = "注意事项";
-            // 
-            // ribbonLabel2
-            // 
-            this.ribbonLabel2.Text = "1.明文不可以有换行        2.明文不应超过5000字";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "VMT文字加解密";
+            this.notifyIcon1.Visible = true;
             // 
             // Form1
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1247, 619);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1273, 606);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ribbon1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -558,6 +565,7 @@
         private System.Windows.Forms.RibbonCheckBox ribbonCheckBox5;
         private System.Windows.Forms.RibbonPanel ribbonPanel8;
         private System.Windows.Forms.RibbonLabel ribbonLabel2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

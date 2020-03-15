@@ -89,8 +89,17 @@ namespace VMware_tools__encrypter
                 MessageBox.Show("密钥必须为8位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             progressBar1.Style = ProgressBarStyle.Marquee;
+            try
+            {
             edc();
             textBox2.Text = destr;
+            }
+            catch (Exception s)
+            {
+                MessageBox.Show(Convert.ToString(s));
+                
+            }
+
             progressBar1.Style = ProgressBarStyle.Continuous;
             for (int i = 0; i < 100; i++)
             {
@@ -295,21 +304,30 @@ namespace VMware_tools__encrypter
            
             te = ming;
             progbs();
-            for (int i = 0; i < 5; i++)
+            try
             {
-               te=mD5.MD5Encrypt(te, ribbonTextBox4.TextBoxText);
-            }
-            for (int i = 0; i < 5; i++)
-            {
-                te =VMware_tools__encrypter.CryptClass.EncryptDES(te, ribbonTextBox4.TextBoxText);
-            }
-            progbe();
-            mi = te;
+                for (int i = 0; i < 5; i++)
+                {
+                    te = mD5.MD5Encrypt(te, ribbonTextBox4.TextBoxText);
+                }
+                for (int i = 0; i < 5; i++)
+                {
+                    te = VMware_tools__encrypter.CryptClass.EncryptDES(te, ribbonTextBox4.TextBoxText);
+                }
+                progbe();
+                mi = te;
                 Form1.CheckForIllegalCrossThreadCalls = false;
-            textBox2.Text = mi;
+                textBox2.Text = mi;
 
-            Clipboard.SetDataObject(ribbonTextBox4.TextBoxText);
-            //想破解算法？？没门！
+                Clipboard.SetDataObject(ribbonTextBox4.TextBoxText);
+                //想破解算法？？没门！
+            }
+            catch (Exception w)
+            {
+                MessageBox.Show(Convert.ToString(w));
+               
+            }
+
         }
 
         private void ribbonButton1_CanvasChanged(object sender, EventArgs e)
@@ -333,18 +351,26 @@ namespace VMware_tools__encrypter
 
             te = ming;
             progbs();
-            for (int i = 0; i < 5; i++)
+            try
             {
-                te = VMware_tools__encrypter.CryptClass.DecryptDES(te, ribbonTextBox4.TextBoxText);
+                for (int i = 0; i < 5; i++)
+                {
+                    te = VMware_tools__encrypter.CryptClass.DecryptDES(te, ribbonTextBox4.TextBoxText);
+                }
+                for (int i = 0; i < 5; i++)
+                {
+                    te = mD5.MD5Decrypt(te, ribbonTextBox4.TextBoxText);
+                }
+                progbe();
+                mi = te;
+                Form1.CheckForIllegalCrossThreadCalls = false;
+                textBox2.Text = mi;
             }
-            for (int i = 0; i < 5; i++)
+            catch (Exception ex)
             {
-                te = mD5.MD5Decrypt(te, ribbonTextBox4.TextBoxText);
+                MessageBox.Show(Convert.ToString(ex));
             }
-            progbe();
-            mi = te;
-            Form1.CheckForIllegalCrossThreadCalls = false;
-            textBox2.Text = mi;
+           
 
 
         }
@@ -449,7 +475,16 @@ namespace VMware_tools__encrypter
             progressBar1.Style = ProgressBarStyle.Marquee;
             /* Thread encr = new Thread(new ThreadStart(sten));
              encr.Start();*/
-            sten();
+            try
+            {
+                sten();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex));
+                throw;
+            }
+           
             progressBar1.Value = 0;
             textBox2.Text = encstr;
             progressBar1.Style = ProgressBarStyle.Continuous;
