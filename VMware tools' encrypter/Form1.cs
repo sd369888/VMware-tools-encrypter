@@ -29,7 +29,7 @@ namespace VMware_tools__encrypter
         public static string pasw= "123",str="",encstr="",destr="";
         public Form1()
         {
-            bool lll;
+            
             InitializeComponent();
             pasw = ribbonTextBox1.TextBoxText;
             str = textBox1.Text;
