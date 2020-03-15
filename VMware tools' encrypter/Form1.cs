@@ -201,6 +201,52 @@ namespace VMware_tools__encrypter
             Application.Exit();
         }
 
+        private void ribbonTextBox2_TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void ribbonButton10_Click(object sender, EventArgs e)
+        {
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            if (ribbonTextBox3.TextBoxText.Length!=8)
+            {
+                MessageBox.Show("请确认密钥为八位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                progressBar1.Style = ProgressBarStyle.Continuous;
+                progressBar1.Value = 0;
+                return;
+            }
+            textBox2.Text =mD5.MD5Encrypt(textBox1.Text, ribbonTextBox3.TextBoxText);
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            for (int i = 0; i < 101; i++)
+            {
+                progressBar1.Value = i;
+                Thread.Sleep(5);
+            }
+            progressBar1.Value = 0;
+        }
+
+        private void ribbonButton11_Click(object sender, EventArgs e)
+        {
+
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            if (ribbonTextBox3.TextBoxText.Length != 8)
+            {
+                MessageBox.Show("请确认密钥为八位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                progressBar1.Style = ProgressBarStyle.Continuous;
+                progressBar1.Value = 0;
+                return;
+            }
+            textBox2.Text = mD5.MD5Decrypt(textBox1.Text, ribbonTextBox3.TextBoxText);
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            for (int i = 0; i < 101; i++)
+            {
+                progressBar1.Value = i;
+                Thread.Sleep(5);
+            }
+            progressBar1.Value = 0;
+        }
+
         public static void edc()
         {
             destr = CryptClass.DecryptDES(str, pasw);

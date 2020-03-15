@@ -32,6 +32,7 @@
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbRecentItem1 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbRecentItem2 = new System.Windows.Forms.RibbonOrbRecentItem();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTextBox1 = new System.Windows.Forms.RibbonTextBox();
@@ -42,6 +43,10 @@
             this.ribbonTextBox2 = new System.Windows.Forms.RibbonTextBox();
             this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTextBox3 = new System.Windows.Forms.RibbonTextBox();
+            this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
@@ -56,7 +61,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.ribbonOrbRecentItem2 = new System.Windows.Forms.RibbonOrbRecentItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -111,10 +115,17 @@
             this.ribbonOrbRecentItem1.Text = "By BiliBili @Vmware_tools";
             this.ribbonOrbRecentItem1.Click += new System.EventHandler(this.ribbonOrbRecentItem1_Click);
             // 
+            // ribbonOrbRecentItem2
+            // 
+            this.ribbonOrbRecentItem2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.Image")));
+            this.ribbonOrbRecentItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.SmallImage")));
+            this.ribbonOrbRecentItem2.Text = "Copyright © 2020 Vmware_tools @ BiliBili";
+            // 
             // ribbonTab1
             // 
             this.ribbonTab1.Panels.Add(this.ribbonPanel1);
             this.ribbonTab1.Panels.Add(this.ribbonPanel3);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel4);
             this.ribbonTab1.Text = "字符串";
             // 
             // ribbonPanel1
@@ -122,7 +133,7 @@
             this.ribbonPanel1.Items.Add(this.ribbonTextBox1);
             this.ribbonPanel1.Items.Add(this.ribbonButton1);
             this.ribbonPanel1.Items.Add(this.ribbonButton3);
-            this.ribbonPanel1.Text = "DES加解密";
+            this.ribbonPanel1.Text = "DES加解密(8位)";
             // 
             // ribbonTextBox1
             // 
@@ -159,12 +170,13 @@
             this.ribbonPanel3.Items.Add(this.ribbonTextBox2);
             this.ribbonPanel3.Items.Add(this.ribbonButton8);
             this.ribbonPanel3.Items.Add(this.ribbonButton9);
-            this.ribbonPanel3.Text = "AES加密";
+            this.ribbonPanel3.Text = "AES加密(32位)";
             // 
             // ribbonTextBox2
             // 
             this.ribbonTextBox2.Text = "密钥";
             this.ribbonTextBox2.TextBoxText = "";
+            this.ribbonTextBox2.TextBoxKeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ribbonTextBox2_TextBoxKeyPress);
             // 
             // ribbonButton8
             // 
@@ -179,6 +191,32 @@
             this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
             this.ribbonButton9.Text = "开始解密";
             this.ribbonButton9.Click += new System.EventHandler(this.ribbonButton9_Click);
+            // 
+            // ribbonPanel4
+            // 
+            this.ribbonPanel4.Items.Add(this.ribbonTextBox3);
+            this.ribbonPanel4.Items.Add(this.ribbonButton10);
+            this.ribbonPanel4.Items.Add(this.ribbonButton11);
+            this.ribbonPanel4.Text = "MD5(8位)";
+            // 
+            // ribbonTextBox3
+            // 
+            this.ribbonTextBox3.Text = "密钥";
+            this.ribbonTextBox3.TextBoxText = "";
+            // 
+            // ribbonButton10
+            // 
+            this.ribbonButton10.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.Image")));
+            this.ribbonButton10.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton10.SmallImage")));
+            this.ribbonButton10.Text = "开始加密";
+            this.ribbonButton10.Click += new System.EventHandler(this.ribbonButton10_Click);
+            // 
+            // ribbonButton11
+            // 
+            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
+            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
+            this.ribbonButton11.Text = "开始解密";
+            this.ribbonButton11.Click += new System.EventHandler(this.ribbonButton11_Click);
             // 
             // ribbonTab2
             // 
@@ -313,12 +351,6 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
             // 
-            // ribbonOrbRecentItem2
-            // 
-            this.ribbonOrbRecentItem2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.Image")));
-            this.ribbonOrbRecentItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.SmallImage")));
-            this.ribbonOrbRecentItem2.Text = "Copyright © 2020 Vmware_tools @ BiliBili";
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -370,6 +402,10 @@
         private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem1;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem1;
         private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem2;
+        private System.Windows.Forms.RibbonPanel ribbonPanel4;
+        private System.Windows.Forms.RibbonTextBox ribbonTextBox3;
+        private System.Windows.Forms.RibbonButton ribbonButton10;
+        private System.Windows.Forms.RibbonButton ribbonButton11;
     }
 }
 
