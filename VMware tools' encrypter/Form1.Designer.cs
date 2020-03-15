@@ -56,11 +56,28 @@
             this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton12 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton13 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton14 = new System.Windows.Forms.RibbonButton();
+            this.ribbonTextBox4 = new System.Windows.Forms.RibbonTextBox();
+            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonCheckBox1 = new System.Windows.Forms.RibbonCheckBox();
+            this.ribbonSeparator2 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
+            this.ribbonSeparator3 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonCheckBox2 = new System.Windows.Forms.RibbonCheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonCheckBox3 = new System.Windows.Forms.RibbonCheckBox();
+            this.ribbonCheckBox4 = new System.Windows.Forms.RibbonCheckBox();
+            this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -95,6 +112,8 @@
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
+            this.ribbon1.Tabs.Add(this.ribbonTab3);
+            this.ribbon1.Tabs.Add(this.ribbonTab4);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue;
@@ -151,6 +170,7 @@
             this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
             this.ribbonButton1.Text = "开始加密";
             this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
+            this.ribbonButton1.CanvasChanged += new System.EventHandler(this.ribbonButton1_CanvasChanged);
             // 
             // ribbonButton2
             // 
@@ -280,6 +300,62 @@
             this.ribbonButton7.Text = "清空";
             this.ribbonButton7.Click += new System.EventHandler(this.ribbonButton7_Click);
             // 
+            // ribbonTab3
+            // 
+            this.ribbonTab3.Panels.Add(this.ribbonPanel5);
+            this.ribbonTab3.Text = "超级加密";
+            // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.Items.Add(this.ribbonButton12);
+            this.ribbonPanel5.Items.Add(this.ribbonButton14);
+            this.ribbonPanel5.Items.Add(this.ribbonTextBox4);
+            this.ribbonPanel5.Items.Add(this.ribbonSeparator1);
+            this.ribbonPanel5.Items.Add(this.ribbonCheckBox1);
+            this.ribbonPanel5.Items.Add(this.ribbonSeparator2);
+            this.ribbonPanel5.Items.Add(this.ribbonLabel1);
+            this.ribbonPanel5.Items.Add(this.ribbonSeparator3);
+            this.ribbonPanel5.Items.Add(this.ribbonCheckBox2);
+            this.ribbonPanel5.Text = "自动模式";
+            // 
+            // ribbonButton12
+            // 
+            this.ribbonButton12.DropDownItems.Add(this.ribbonButton13);
+            this.ribbonButton12.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.Image")));
+            this.ribbonButton12.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton12.SmallImage")));
+            this.ribbonButton12.Text = "开始加密";
+            this.ribbonButton12.Click += new System.EventHandler(this.ribbonButton12_Click);
+            // 
+            // ribbonButton13
+            // 
+            this.ribbonButton13.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.Image")));
+            this.ribbonButton13.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton13.SmallImage")));
+            this.ribbonButton13.Text = "ribbonButton13";
+            // 
+            // ribbonButton14
+            // 
+            this.ribbonButton14.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.Image")));
+            this.ribbonButton14.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton14.SmallImage")));
+            this.ribbonButton14.Text = "开始解密";
+            this.ribbonButton14.Click += new System.EventHandler(this.ribbonButton14_Click);
+            // 
+            // ribbonTextBox4
+            // 
+            this.ribbonTextBox4.Text = "输入密钥(8位)";
+            this.ribbonTextBox4.TextBoxText = "";
+            // 
+            // ribbonCheckBox1
+            // 
+            this.ribbonCheckBox1.Text = "自动生成密钥";
+            // 
+            // ribbonLabel1
+            // 
+            this.ribbonLabel1.Text = "请注意选择正确的加密方式";
+            // 
+            // ribbonCheckBox2
+            // 
+            this.ribbonCheckBox2.Text = "加密完成后复制密钥";
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -351,6 +427,33 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
             // 
+            // ribbonTab4
+            // 
+            this.ribbonTab4.Panels.Add(this.ribbonPanel6);
+            this.ribbonTab4.Text = "个人信息保护选项";
+            // 
+            // ribbonPanel6
+            // 
+            this.ribbonPanel6.Items.Add(this.ribbonCheckBox3);
+            this.ribbonPanel6.Items.Add(this.ribbonCheckBox4);
+            this.ribbonPanel6.Items.Add(this.ribbonButton15);
+            this.ribbonPanel6.Text = "信息保护操作";
+            // 
+            // ribbonCheckBox3
+            // 
+            this.ribbonCheckBox3.Text = "当任务管理器被启动时锁定屏幕";
+            // 
+            // ribbonCheckBox4
+            // 
+            this.ribbonCheckBox4.Text = "不允许使用任务管理器";
+            // 
+            // ribbonButton15
+            // 
+            this.ribbonButton15.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.Image")));
+            this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
+            this.ribbonButton15.Text = "应用";
+            this.ribbonButton15.Click += new System.EventHandler(this.ribbonButton15_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -406,6 +509,23 @@
         private System.Windows.Forms.RibbonTextBox ribbonTextBox3;
         private System.Windows.Forms.RibbonButton ribbonButton10;
         private System.Windows.Forms.RibbonButton ribbonButton11;
+        private System.Windows.Forms.RibbonTab ribbonTab3;
+        private System.Windows.Forms.RibbonPanel ribbonPanel5;
+        private System.Windows.Forms.RibbonButton ribbonButton12;
+        private System.Windows.Forms.RibbonButton ribbonButton13;
+        private System.Windows.Forms.RibbonButton ribbonButton14;
+        private System.Windows.Forms.RibbonTextBox ribbonTextBox4;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator1;
+        private System.Windows.Forms.RibbonCheckBox ribbonCheckBox1;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator2;
+        private System.Windows.Forms.RibbonLabel ribbonLabel1;
+        private System.Windows.Forms.RibbonSeparator ribbonSeparator3;
+        private System.Windows.Forms.RibbonCheckBox ribbonCheckBox2;
+        private System.Windows.Forms.RibbonTab ribbonTab4;
+        private System.Windows.Forms.RibbonPanel ribbonPanel6;
+        private System.Windows.Forms.RibbonCheckBox ribbonCheckBox3;
+        private System.Windows.Forms.RibbonCheckBox ribbonCheckBox4;
+        private System.Windows.Forms.RibbonButton ribbonButton15;
     }
 }
 

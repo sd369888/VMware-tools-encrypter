@@ -11,18 +11,22 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Win32;
+using System.Runtime.InteropServices;
 
 namespace VMware_tools__encrypter
 {
-
-
+   
+    
     public partial class Form1 : Form
     {
- 
+        [DllImport("user32")]
+        public static extern void LockWorkStation();
+
         public static string pasw= "123",str="",encstr="",destr="";
         public Form1()
         {
-            
+            bool lll;
             InitializeComponent();
             pasw = ribbonTextBox1.TextBoxText;
             str = textBox1.Text;
@@ -245,6 +249,150 @@ namespace VMware_tools__encrypter
                 Thread.Sleep(5);
             }
             progressBar1.Value = 0;
+        }
+        /// <summary>
+        /// 设置进度条为运行状态
+        /// </summary>
+        public void progbs()
+        {
+            progressBar1.Value = 0;
+            progressBar1.Style = ProgressBarStyle.Marquee;
+        }
+        /// <summary>
+        /// 进度条完成时设置
+        /// </summary>
+        public void progbe()
+        {
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            for (int i = 0; i < 101; i++)
+            {
+                progressBar1.Value = i;
+                Thread.Sleep(5);
+            }
+            progressBar1.Value = 0;
+        }
+        private void ribbonButton12_Click(object sender, EventArgs e)
+        {
+            string ming = textBox1.Text, te, mi = textBox2.Text;
+            if (ribbonCheckBox1.Checked == true)
+            {
+                Random rd = new Random();
+                ribbonTextBox4.TextBoxText = Convert.ToString(rd.Next(10000000, 99999999));
+            }
+            progbs();
+      
+                if (ribbonTextBox4.TextBoxText.Length != 8)
+            {
+                MessageBox.Show("请确认密钥为八位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                progressBar1.Style = ProgressBarStyle.Continuous;
+                progressBar1.Value = 0;
+                return;
+            }
+           
+            te = ming;
+            progbs();
+            for (int i = 0; i < 5; i++)
+            {
+               te=mD5.MD5Encrypt(te, ribbonTextBox4.TextBoxText);
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                te =VMware_tools__encrypter.CryptClass.EncryptDES(te, ribbonTextBox4.TextBoxText);
+            }
+            progbe();
+            mi = te;
+                Form1.CheckForIllegalCrossThreadCalls = false;
+            textBox2.Text = mi;
+
+            Clipboard.SetDataObject(ribbonTextBox4.TextBoxText);
+            //想破解算法？？没门！
+        }
+
+        private void ribbonButton1_CanvasChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonButton14_Click(object sender, EventArgs e)
+        {
+            string ming=textBox1.Text , te, mi ;
+
+            progbs();
+
+            if (ribbonTextBox4.TextBoxText.Length != 8)
+            {
+                MessageBox.Show("请确认密钥为八位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                progressBar1.Style = ProgressBarStyle.Continuous;
+                progressBar1.Value = 0;
+                return;
+            }
+
+            te = ming;
+            progbs();
+            for (int i = 0; i < 5; i++)
+            {
+                te = VMware_tools__encrypter.CryptClass.DecryptDES(te, ribbonTextBox4.TextBoxText);
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                te = mD5.MD5Decrypt(te, ribbonTextBox4.TextBoxText);
+            }
+            progbe();
+            mi = te;
+            Form1.CheckForIllegalCrossThreadCalls = false;
+            textBox2.Text = mi;
+
+
+        }
+        bool lll=false;
+        private void ribbonButton15_Click(object sender, EventArgs e)
+        {
+            if (ribbonCheckBox4.Checked==true)
+            {
+                RegistryKey Huser = Registry.CurrentUser;
+                RegistryKey zcb = Huser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\", true);
+                RegistryKey ssub = zcb.CreateSubKey(@"Policies\System", RegistryKeyPermissionCheck.ReadWriteSubTree);
+
+                ssub.SetValue("DisableTaskMgr", "1", RegistryValueKind.DWord);
+            }
+            else
+            {
+                  if (ribbonCheckBox4.Checked==false)
+                {
+                    RegistryKey Huser = Registry.CurrentUser;
+                    RegistryKey zcb = Huser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\", true);
+                    RegistryKey ssub = zcb.CreateSubKey(@"Policies\System", RegistryKeyPermissionCheck.ReadWriteSubTree);
+
+                    ssub.SetValue("DisableTaskMgr", "0", RegistryValueKind.DWord);
+                }
+            }
+            ThreadStart threadStart = new ThreadStart(Calculate);
+            Thread thread = new Thread(threadStart);
+            void Calculate()
+            {
+                while (lll == true)
+                {
+                    if (System.Diagnostics.Process.GetProcessesByName("taskmgr.exe").ToList().Count > 0)
+                    {
+                        LockWorkStation();
+                    }
+                }
+
+            }
+            if (ribbonCheckBox3.Checked == true)
+            {
+                lll = true;
+
+                thread.Start();
+               
+            }
+            if (ribbonCheckBox3.Checked==false)
+            {
+                lll = false;
+                thread.Abort();
+            }
+
+            
         }
 
         public static void edc()
