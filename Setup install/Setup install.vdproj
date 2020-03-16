@@ -5281,7 +5281,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:VMT文字加密程序"
         "ProductCode" = "8:{FFB82290-6899-4DDE-924B-A6C24339160A}"
-        "PackageCode" = "8:{DCF16817-BC0D-44D0-9AEC-945366093F2D}"
+        "PackageCode" = "8:{1158665B-6C8D-488D-9972-A9BAF738BB69}"
         "UpgradeCode" = "8:{924FF695-2DD0-42CF-9DAB-794EEED26054}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
