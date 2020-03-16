@@ -31,4 +31,3 @@ D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Buffers
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Memory.xml
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Numerics.Vectors.xml
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Debug\VMware tools' encrypter.csprojAssemblyReference.cache

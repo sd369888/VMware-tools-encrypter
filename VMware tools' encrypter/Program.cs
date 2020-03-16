@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.AppCenter;
+﻿using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using System;
+using System.Windows.Forms;
 namespace VMware_tools__encrypter
 {
     static class Program
@@ -29,19 +26,21 @@ namespace VMware_tools__encrypter
             //判断当前登录用户是否为管理员
             if (principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator))
             {
-                
+
                 //如果是管理员，则直接运行
                 Application.Run(new Form1());
             }
             else
             {
                 //创建启动对象
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                startInfo.UseShellExecute = true;
-                startInfo.WorkingDirectory = Environment.CurrentDirectory;
-                startInfo.FileName = Application.ExecutablePath;
-                //设置启动动作,确保以管理员身份运行
-                startInfo.Verb = "runas";
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo
+                {
+                    UseShellExecute = true,
+                    WorkingDirectory = Environment.CurrentDirectory,
+                    FileName = Application.ExecutablePath,
+                    //设置启动动作,确保以管理员身份运行
+                    Verb = "runas"
+                };
                 try
                 {
                     System.Diagnostics.Process.Start(startInfo);
@@ -52,6 +51,8 @@ namespace VMware_tools__encrypter
                 }
                 //退出
                 Application.Exit();
+
+                Application.Run(new Form1());
             }
         }
     }

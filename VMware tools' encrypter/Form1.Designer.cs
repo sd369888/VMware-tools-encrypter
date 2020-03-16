@@ -47,7 +47,6 @@
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTextBox3 = new System.Windows.Forms.RibbonTextBox();
             this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
@@ -84,6 +83,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -224,7 +224,7 @@
             this.ribbonPanel4.Items.Add(this.ribbonTextBox3);
             this.ribbonPanel4.Items.Add(this.ribbonButton10);
             this.ribbonPanel4.Items.Add(this.ribbonButton11);
-            this.ribbonPanel4.Text = "MD5(8位)";
+            this.ribbonPanel4.Text = "MD5(8位)(不可逆)";
             // 
             // ribbonTextBox3
             // 
@@ -238,13 +238,6 @@
             this.ribbonButton10.Text = "开始加密";
             this.ribbonButton10.Click += new System.EventHandler(this.ribbonButton10_Click);
             // 
-            // ribbonButton11
-            // 
-            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
-            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            this.ribbonButton11.Text = "开始解密";
-            this.ribbonButton11.Click += new System.EventHandler(this.ribbonButton11_Click);
-            // 
             // ribbonPanel8
             // 
             this.ribbonPanel8.Items.Add(this.ribbonLabel2);
@@ -252,7 +245,7 @@
             // 
             // ribbonLabel2
             // 
-            this.ribbonLabel2.Text = "1.明文不可以有换行        2.明文不应超过5000字";
+            this.ribbonLabel2.Text = "1.明文不可以有换行        2.明文不应超过1000字        3.请不要为了测试而使用大量重复文本！";
             // 
             // ribbonTab2
             // 
@@ -450,7 +443,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Close;
             this.textBox1.Location = new System.Drawing.Point(0, 4);
-            this.textBox1.MaxLength = 10000;
+            this.textBox1.MaxLength = 1000009999;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -464,7 +457,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.textBox2.Location = new System.Drawing.Point(3, 4);
-            this.textBox2.MaxLength = 1199999999;
+            this.textBox2.MaxLength = 1999999999;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -487,6 +480,14 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "VMT文字加解密";
             this.notifyIcon1.Visible = true;
+            // 
+            // ribbonButton11
+            // 
+            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
+            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
+            this.ribbonButton11.Text = "开始解密";
+            this.ribbonButton11.DoubleClick += new System.EventHandler(this.ribbonButton11_DoubleClick);
+            this.ribbonButton11.Click += new System.EventHandler(this.ribbonButton11_Click);
             // 
             // Form1
             // 
@@ -543,7 +544,6 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel4;
         private System.Windows.Forms.RibbonTextBox ribbonTextBox3;
         private System.Windows.Forms.RibbonButton ribbonButton10;
-        private System.Windows.Forms.RibbonButton ribbonButton11;
         private System.Windows.Forms.RibbonTab ribbonTab3;
         private System.Windows.Forms.RibbonPanel ribbonPanel5;
         private System.Windows.Forms.RibbonButton ribbonButton12;
@@ -566,6 +566,7 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel8;
         private System.Windows.Forms.RibbonLabel ribbonLabel2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.RibbonButton ribbonButton11;
     }
 }
 

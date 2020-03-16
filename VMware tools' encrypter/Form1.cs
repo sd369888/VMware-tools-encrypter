@@ -1,42 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Linq;
 using System.Management;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
-using System.IO;
-using Microsoft.Win32;
-using System.Runtime.InteropServices;
 
 
 namespace VMware_tools__encrypter
 {
-   
-    
+
+
     public partial class Form1 : Form
     {
-       
+
 
         [DllImport("user32")]
         public static extern void LockWorkStation();
-        
-        public static string pasw= "123",str="",encstr="",destr="";
+
+        public static string pasw = "123", str = "", encstr = "", destr = "";
         public Form1()
         {
-            
+
             InitializeComponent();
             pasw = ribbonTextBox1.TextBoxText;
             str = textBox1.Text;
 
 
         }
-   
+
         public delegate void ProgressHandler(object sender, ProgressEventArgs e);
         #region AES加密
 
@@ -61,26 +56,26 @@ namespace VMware_tools__encrypter
         #endregion AES加密
 
         #region AES解密
- 
-    public static string TextDecrypt(byte[] data, string secretKey)
-    {
-            if (secretKey.Length!=32)
+
+        public static string TextDecrypt(byte[] data, string secretKey)
+        {
+            if (secretKey.Length != 32)
             {
                 MessageBox.Show("请输入32位密钥");
                 return null;
             }
-        byte[] key = Encoding.UTF8.GetBytes(secretKey);
+            byte[] key = Encoding.UTF8.GetBytes(secretKey);
 
-        for (int i = 0; i < data.Length; i++)
-        {
-            data[i] ^= key[i % key.Length];
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] ^= key[i % key.Length];
+            }
+
+            return Encoding.UTF8.GetString(data, 0, data.Length);
         }
 
-        return Encoding.UTF8.GetString(data, 0, data.Length);
-    }
-
-    #endregion AES解密
-    private void ribbonButton3_Click(object sender, EventArgs e)
+        #endregion AES解密
+        private void ribbonButton3_Click(object sender, EventArgs e)
         {
             str = textBox1.Text;
             pasw = ribbonTextBox1.TextBoxText;
@@ -91,13 +86,13 @@ namespace VMware_tools__encrypter
             progressBar1.Style = ProgressBarStyle.Marquee;
             try
             {
-            edc();
-            textBox2.Text = destr;
+                edc();
+                textBox2.Text = destr;
             }
             catch (Exception s)
             {
                 MessageBox.Show(Convert.ToString(s));
-                
+
             }
 
             progressBar1.Style = ProgressBarStyle.Continuous;
@@ -106,19 +101,23 @@ namespace VMware_tools__encrypter
                 progressBar1.Value = i;
             }
         }
-        
+
         public static byte[] mkbyteArray = System.Text.Encoding.Default.GetBytes(str);
-        public static int i=0;
+        public static int i = 0;
         private void ribbonTextBox1_TextBoxKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar < '0' || e.KeyChar > '9')
             {
+                if (e.KeyChar == '\b')
+                {
+                    return;
+                }
                 e.Handled = true;
             }
             else
             {
-                i++;
-                if (i > 16)
+
+                if (ribbonTextBox1.TextBoxText.Length > 7)
                 {
                     e.Handled = true;//不处理
                 }
@@ -136,7 +135,7 @@ namespace VMware_tools__encrypter
         private void ribbonButton6_Click(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(textBox1.SelectedText);
-            if (textBox1.SelectedText==null)
+            if (textBox1.SelectedText == null)
             {
                 return;
             }
@@ -145,13 +144,13 @@ namespace VMware_tools__encrypter
 
         private void ribbonButton4_Click(object sender, EventArgs e)
         {
-          IDataObject iData = Clipboard.GetDataObject();
-           
-              int  idx = textBox1.SelectionStart;
-        
+            IDataObject iData = Clipboard.GetDataObject();
+
+            int idx = textBox1.SelectionStart;
+
             if (iData.GetDataPresent(DataFormats.Text))
             {
-                textBox2.Text.Insert(idx,(String)iData.GetData(DataFormats.Text));
+                textBox2.Text.Insert(idx, (string)iData.GetData(DataFormats.Text));
             }
 
 
@@ -166,6 +165,11 @@ namespace VMware_tools__encrypter
 
         private void ribbonButton8_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Length >= 5000)
+            {
+                MessageBox.Show("文本过长");
+                return;
+            }
             progressBar1.Style = ProgressBarStyle.Marquee;
             progressBar1.Value = 0;
             for (int i = 0; i < 101; i++)
@@ -177,14 +181,14 @@ namespace VMware_tools__encrypter
             progressBar1.Value = 0;
             try
             {
- textBox2.Text=System.Text.Encoding.Default.GetString(  TextEncrypt(textBox1.Text, ribbonTextBox2.TextBoxText));
+                textBox2.Text = System.Text.Encoding.Default.GetString(TextEncrypt(textBox1.Text, ribbonTextBox2.TextBoxText));
             }
             catch (Exception ex)
             {
 
                 textBox2.Text = Convert.ToString(ex);
             }
-           
+
         }
 
         private void ribbonButton9_Click(object sender, EventArgs e)
@@ -200,7 +204,7 @@ namespace VMware_tools__encrypter
             progressBar1.Value = 0;
             byte[] byteArray = System.Text.Encoding.Default.GetBytes(textBox1.Text);
             byte[] fuckbyte = System.Text.Encoding.Default.GetBytes(ribbonTextBox2.TextBoxText);
-            textBox2.Text = TextDecrypt( byteArray,ribbonTextBox2.TextBoxText);
+            textBox2.Text = TextDecrypt(byteArray, ribbonTextBox2.TextBoxText);
         }
 
         private void ribbon1_Click(object sender, EventArgs e)
@@ -225,15 +229,20 @@ namespace VMware_tools__encrypter
 
         private void ribbonButton10_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Length >= 5000)
+            {
+                MessageBox.Show("文本过长");
+                return;
+            }
             progressBar1.Style = ProgressBarStyle.Marquee;
-            if (ribbonTextBox3.TextBoxText.Length!=8)
+            if (ribbonTextBox3.TextBoxText.Length != 8)
             {
                 MessageBox.Show("请确认密钥为八位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 progressBar1.Style = ProgressBarStyle.Continuous;
                 progressBar1.Value = 0;
                 return;
             }
-            textBox2.Text =mD5.MD5Encrypt(textBox1.Text, ribbonTextBox3.TextBoxText);
+            textBox2.Text = mD5.MD5Encrypt(textBox1.Text, ribbonTextBox3.TextBoxText);
             progressBar1.Style = ProgressBarStyle.Continuous;
             for (int i = 0; i < 101; i++)
             {
@@ -286,6 +295,11 @@ namespace VMware_tools__encrypter
         }
         private void ribbonButton12_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Length >= 5000)
+            {
+                MessageBox.Show("文本过长");
+                return;
+            }
             string ming = textBox1.Text, te, mi = textBox2.Text;
             if (ribbonCheckBox1.Checked == true)
             {
@@ -293,15 +307,15 @@ namespace VMware_tools__encrypter
                 ribbonTextBox4.TextBoxText = Convert.ToString(rd.Next(10000000, 99999999));
             }
             progbs();
-      
-                if (ribbonTextBox4.TextBoxText.Length != 8)
+
+            if (ribbonTextBox4.TextBoxText.Length != 8)
             {
                 MessageBox.Show("请确认密钥为八位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 progressBar1.Style = ProgressBarStyle.Continuous;
                 progressBar1.Value = 0;
                 return;
             }
-           
+
             te = ming;
             progbs();
             try
@@ -325,7 +339,7 @@ namespace VMware_tools__encrypter
             catch (Exception w)
             {
                 MessageBox.Show(Convert.ToString(w));
-               
+
             }
 
         }
@@ -337,7 +351,7 @@ namespace VMware_tools__encrypter
 
         private void ribbonButton14_Click(object sender, EventArgs e)
         {
-            string ming=textBox1.Text , te, mi ;
+            string ming = textBox1.Text, te, mi;
 
             progbs();
 
@@ -370,14 +384,14 @@ namespace VMware_tools__encrypter
             {
                 MessageBox.Show(Convert.ToString(ex));
             }
-           
+
 
 
         }
-        bool lll=false;
+        bool lll = false;
         private void ribbonButton15_Click(object sender, EventArgs e)
         {
-            if (ribbonCheckBox4.Checked==true)
+            if (ribbonCheckBox4.Checked == true)
             {
                 RegistryKey Huser = Registry.CurrentUser;
                 RegistryKey zcb = Huser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\", true);
@@ -387,7 +401,7 @@ namespace VMware_tools__encrypter
             }
             else
             {
-                  if (ribbonCheckBox4.Checked==false)
+                if (ribbonCheckBox4.Checked == false)
                 {
                     RegistryKey Huser = Registry.CurrentUser;
                     RegistryKey zcb = Huser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\", true);
@@ -414,15 +428,15 @@ namespace VMware_tools__encrypter
                 lll = true;
 
                 thread.Start();
-               
+
             }
-            if (ribbonCheckBox3.Checked==false)
+            if (ribbonCheckBox3.Checked == false)
             {
                 lll = false;
                 thread.Abort();
             }
 
-            
+
         }
 
         private void ribbonCheckBox5_CheckBoxCheckChanged(object sender, EventArgs e/*,KeyEventArgs keyEventArgs*/)
@@ -446,29 +460,45 @@ namespace VMware_tools__encrypter
 
         private void Form1_Load(object sender, EventArgs e)
         {
-       
+
+        }
+
+        private void ribbonButton11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonButton11_DoubleClick(object sender, EventArgs e)
+        {
+
         }
 
         public static void edc()
         {
             destr = CryptClass.DecryptDES(str, pasw);
         }
-        public  void sten()
+        public void sten()
         {
-           
-           encstr= CryptClass.EncryptDES(str, pasw);
+
+            encstr = CryptClass.EncryptDES(str, pasw);
             VMware_tools__encrypter.Form1.CheckForIllegalCrossThreadCalls = false;
-            Action act = delegate () {
-                
-};
+            Action act = delegate ()
+            {
+
+            };
             this.Invoke(act);
         }
         private void ribbonButton1_Click(object sender, EventArgs e)
         {
-            pasw = ribbonTextBox1.TextBoxText;
-            if (pasw.Length!=8)
+            if (textBox1.Text.Length >= 5000)
             {
-                MessageBox.Show("密钥必须为8位", "提示", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("文本过长");
+                return;
+            }
+            pasw = ribbonTextBox1.TextBoxText;
+            if (pasw.Length != 8)
+            {
+                MessageBox.Show("密钥必须为8位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             str = textBox1.Text;
@@ -484,7 +514,7 @@ namespace VMware_tools__encrypter
                 MessageBox.Show(Convert.ToString(ex));
                 throw;
             }
-           
+
             progressBar1.Value = 0;
             textBox2.Text = encstr;
             progressBar1.Style = ProgressBarStyle.Continuous;
@@ -540,7 +570,10 @@ namespace VMware_tools__encrypter
         public static string DecryptDES(string decryptString, string decryptKey)
         {
             if (decryptString == "")
+            {
                 return "";
+            }
+
             try
             {
                 byte[] rgbKey = Encoding.UTF8.GetBytes(decryptKey);
