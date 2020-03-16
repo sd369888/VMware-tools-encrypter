@@ -423,7 +423,7 @@ namespace VMware_tools__encrypter
                             p.Kill();
                         }
                         LockWorkStation();
-                        
+
                     }
                 }
 
