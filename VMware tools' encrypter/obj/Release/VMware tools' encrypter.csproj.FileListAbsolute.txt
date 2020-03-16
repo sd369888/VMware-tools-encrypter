@@ -1,0 +1,39 @@
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\runtimes\win-x86\native\e_sqlite3.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\runtimes\win-x64\native\e_sqlite3.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\runtimes\win-arm\native\e_sqlite3.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\VMware tools' encrypter.exe.config
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\VMware tools' encrypter.exe
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\VMware tools' encrypter.pdb
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Microsoft.AppCenter.Analytics.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Microsoft.AppCenter.Crashes.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Microsoft.AppCenter.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Newtonsoft.Json.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\SQLitePCLRaw.batteries_v2.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\SQLitePCLRaw.core.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\SQLitePCLRaw.nativelibrary.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Buffers.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Memory.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Numerics.Vectors.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Windows.Forms.Ribbon35.dll
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Microsoft.AppCenter.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Microsoft.AppCenter.Analytics.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Microsoft.AppCenter.Crashes.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\Newtonsoft.Json.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Buffers.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Memory.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Numerics.Vectors.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.csprojAssemblyReference.cache
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware_tools__encrypter.Form1.resources
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware_tools__encrypter.Properties.Resources.resources
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.csproj.GenerateResource.cache
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.csproj.CopyComplete
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.exe
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.pdb
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.TrustInfo.xml
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.exe.manifest
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\VMware tools' encrypter.exe.manifest
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\bin\Release\VMware tools' encrypter.application
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\Release\VMware tools' encrypter.application
