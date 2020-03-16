@@ -32,7 +32,7 @@
     <SuiteName>Encryption Suite</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>2023</ApplicationRevision>
-    <ApplicationVersion>0.99.200000.%2a</ApplicationVersion>
+    <ApplicationVersion>0.99.46422.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

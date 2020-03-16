@@ -19,3 +19,4 @@ D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\x86\Release\VMware t
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\x86\Release\VMware tools' encrypter.application
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\x86\Release\VMware tools' encrypter.csproj.CopyComplete
 D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\x86\Release\VMware tools' encrypter.exe
+D:\vmen\VMware tools' encrypter\VMware tools' encrypter\obj\x86\Release\VMware tools' encrypter.csprojAssemblyReference.cache
