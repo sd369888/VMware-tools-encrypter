@@ -51,8 +51,6 @@ namespace VMware_tools__encrypter
                 }
                 //退出
                 Application.Exit();
-
-                Application.Run(new Form1());
             }
         }
     }
