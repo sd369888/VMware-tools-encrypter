@@ -1,6 +1,4 @@
-﻿using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
+﻿
 using System;
 using System.Windows.Forms;
 namespace VMware_tools__encrypter
@@ -15,7 +13,6 @@ namespace VMware_tools__encrypter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            AppCenter.Start("9b76df2a-e28d-4676-8a04-af73d5d2dae4", typeof(Analytics), typeof(Crashes));
             /**
               * 当前用户是管理员的时候，直接启动应用程序
               * 如果不是管理员，则使用启动对象启动程序，以确保使用管理员身份运行
