@@ -31,7 +31,7 @@
     <SuiteName>Encryption Suite</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>2020</ApplicationRevision>
-    <ApplicationVersion>1.0.60932.%2a</ApplicationVersion>
+    <ApplicationVersion>0.99.200000.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <BootstrapperEnabled>true</BootstrapperEnabled>
