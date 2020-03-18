@@ -47,6 +47,7 @@
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTextBox3 = new System.Windows.Forms.RibbonTextBox();
             this.ribbonButton10 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
@@ -75,15 +76,12 @@
             this.ribbonCheckBox3 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonCheckBox4 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonButton15 = new System.Windows.Forms.RibbonButton();
-            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonCheckBox5 = new System.Windows.Forms.RibbonCheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.ribbonButton11 = new System.Windows.Forms.RibbonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -238,6 +236,14 @@
             this.ribbonButton10.Text = "开始加密";
             this.ribbonButton10.Click += new System.EventHandler(this.ribbonButton10_Click);
             // 
+            // ribbonButton11
+            // 
+            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
+            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
+            this.ribbonButton11.Text = "开始解密";
+            this.ribbonButton11.DoubleClick += new System.EventHandler(this.ribbonButton11_DoubleClick);
+            this.ribbonButton11.Click += new System.EventHandler(this.ribbonButton11_Click);
+            // 
             // ribbonPanel8
             // 
             this.ribbonPanel8.Items.Add(this.ribbonLabel2);
@@ -368,7 +374,6 @@
             // ribbonTab4
             // 
             this.ribbonTab4.Panels.Add(this.ribbonPanel6);
-            this.ribbonTab4.Panels.Add(this.ribbonPanel7);
             this.ribbonTab4.Text = "个人信息保护选项";
             // 
             // ribbonPanel6
@@ -392,16 +397,6 @@
             this.ribbonButton15.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton15.SmallImage")));
             this.ribbonButton15.Text = "应用";
             this.ribbonButton15.Click += new System.EventHandler(this.ribbonButton15_Click);
-            // 
-            // ribbonPanel7
-            // 
-            this.ribbonPanel7.Items.Add(this.ribbonCheckBox5);
-            this.ribbonPanel7.Text = "聊天信息保护";
-            // 
-            // ribbonCheckBox5
-            // 
-            this.ribbonCheckBox5.Text = "在按下Alt+Z时关闭QQ";
-            this.ribbonCheckBox5.CheckBoxCheckChanged += new System.EventHandler(this.ribbonCheckBox5_CheckBoxCheckChanged);
             // 
             // panel1
             // 
@@ -481,14 +476,6 @@
             this.notifyIcon1.Text = "VMT文字加解密";
             this.notifyIcon1.Visible = true;
             // 
-            // ribbonButton11
-            // 
-            this.ribbonButton11.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.Image")));
-            this.ribbonButton11.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton11.SmallImage")));
-            this.ribbonButton11.Text = "开始解密";
-            this.ribbonButton11.DoubleClick += new System.EventHandler(this.ribbonButton11_DoubleClick);
-            this.ribbonButton11.Click += new System.EventHandler(this.ribbonButton11_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -499,7 +486,7 @@
             this.Name = "Form1";
             this.Text = "VMT文字加解密";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+         //   this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -561,8 +548,6 @@
         private System.Windows.Forms.RibbonCheckBox ribbonCheckBox3;
         private System.Windows.Forms.RibbonCheckBox ribbonCheckBox4;
         private System.Windows.Forms.RibbonButton ribbonButton15;
-        private System.Windows.Forms.RibbonPanel ribbonPanel7;
-        private System.Windows.Forms.RibbonCheckBox ribbonCheckBox5;
         private System.Windows.Forms.RibbonPanel ribbonPanel8;
         private System.Windows.Forms.RibbonLabel ribbonLabel2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;

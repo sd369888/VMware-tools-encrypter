@@ -449,19 +449,7 @@ namespace VMware_tools__encrypter
 
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (ribbonCheckBox5.Checked == true)
-            {
-                if (e.Alt && e.KeyCode == Keys.Z)
-                {
-                    foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName("qq"))
-                    {
-                        p.Kill();
-                    }
-                }
-            }
-        }
+      
 
         private void Form1_Load(object sender, EventArgs e)
         {
