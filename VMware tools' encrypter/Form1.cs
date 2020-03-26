@@ -201,11 +201,13 @@ namespace VMware_tools__encrypter
                 progressBar1.Value = i;
                 Thread.Sleep(5);
             }
-            progressBar1.Style = ProgressBarStyle.Continuous;
-            progressBar1.Value = 0;
+            progressBar1.Value = 100;
             byte[] byteArray = System.Text.Encoding.Default.GetBytes(textBox1.Text);
             byte[] fuckbyte = System.Text.Encoding.Default.GetBytes(ribbonTextBox2.TextBoxText);
             textBox2.Text = TextDecrypt(byteArray, ribbonTextBox2.TextBoxText);
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            progressBar1.Value = 0;
+
         }
 
         private void ribbon1_Click(object sender, EventArgs e)
