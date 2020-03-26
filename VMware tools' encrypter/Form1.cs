@@ -172,13 +172,7 @@ namespace VMware_tools__encrypter
             }
             progressBar1.Style = ProgressBarStyle.Marquee;
             progressBar1.Value = 0;
-            for (int i = 0; i < 101; i++)
-            {
-                progressBar1.Value = i;
-                Thread.Sleep(5);
-            }
-            progressBar1.Style = ProgressBarStyle.Continuous;
-            progressBar1.Value = 0;
+
             try
             {
                 textBox2.Text = System.Text.Encoding.Default.GetString(TextEncrypt(textBox1.Text, ribbonTextBox2.TextBoxText));
@@ -188,7 +182,14 @@ namespace VMware_tools__encrypter
 
                 textBox2.Text = Convert.ToString(ex);
             }
-
+            for (int i = 0; i < 101; i++)
+            {
+                progressBar1.Value = i;
+                Thread.Sleep(5);
+            }
+            progressBar1.Value = 100;
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            progressBar1.Value = 0;
         }
 
         private void ribbonButton9_Click(object sender, EventArgs e)
